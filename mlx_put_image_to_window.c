@@ -6,12 +6,12 @@
 /*   By: fcals <fcals@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/13 15:57:23 by fcals             #+#    #+#             */
-/*   Updated: 2020/03/13 18:33:59 by fcals            ###   ########.fr       */
+/*   Updated: 2020/03/15 14:27:35 by fcals            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <SDL.h>
-#include <mlx.h>
+#include <mlx_private.h>
 
 int	mlx_put_image_to_window(void *mlx_ptr, void *win_ptr, void *img_ptr,
 	int x, int y)

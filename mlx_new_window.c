@@ -6,12 +6,12 @@
 /*   By: fcals <fcals@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/13 13:44:48 by fcals             #+#    #+#             */
-/*   Updated: 2020/03/14 01:09:34 by fcals            ###   ########.fr       */
+/*   Updated: 2020/03/15 16:51:33 by fcals            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <SDL.h>
-#include <mlx.h>
+#include <mlx_private.h>
 
 void	*mlx_new_window(void *mlx_ptr, int size_x, int size_y, char *title)
 {
@@ -35,6 +35,5 @@ void	*mlx_new_window(void *mlx_ptr, int size_x, int size_y, char *title)
 		return (NULL);
 	}
 	win_ptr->mlx_ptr = (t_mlx_ptr*)mlx_ptr;
-	win_ptr->mlx_ptr->windows++;
 	return ((void*)win_ptr);
 }

@@ -6,37 +6,32 @@
 /*   By: fcals <fcals@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/13 15:48:45 by fcals             #+#    #+#             */
-/*   Updated: 2020/03/14 12:18:12 by fcals            ###   ########.fr       */
+/*   Updated: 2020/03/15 17:01:07 by fcals            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <SDL.h>
-#include <mlx.h>
-
-static void test_keycode(SDL_KeyboardEvent *key)
-{
-	SDL_Log("scancode: %x, sym: %x\n", key->keysym.scancode, key->keysym.sym);
-}
+#include <mlx_private.h>
 
 static void	check_events(t_mlx_ptr *mlx_ptr)
 {
 	SDL_Event evt;
 
 	SDL_PollEvent(&evt);
-	if (evt.type == SDL_KEYDOWN)
-	{
-		test_keycode(&evt.key);
+	if (evt.type == SDL_MOUSEBUTTONDOWN && mlx_ptr->event[4].set)
+		mlx_ptr->event[4].callback((int)evt.button.button, evt.button.x,
+		evt.button.y, mlx_ptr->event[4].param);
+	else if (evt.type == SDL_MOUSEBUTTONUP && mlx_ptr->event[5].set)
+		mlx_ptr->event[5].callback((int)evt.button.button, evt.button.x,
+		evt.button.y, mlx_ptr->event[5].param);
+	else if (evt.type == SDL_KEYDOWN && mlx_ptr->event[2].set)
 		mlx_ptr->event[2].callback(
 		(int)evt.key.keysym.sym, mlx_ptr->event[2].param);
-	}
-	else if (evt.type == SDL_KEYUP)
-	{
-		test_keycode(&evt.key);
+	else if (evt.type == SDL_KEYUP && mlx_ptr->event[3].set)
 		mlx_ptr->event[3].callback(
 		(int)evt.key.keysym.sym, mlx_ptr->event[3].param);
-	}
-	else if (evt.type == SDL_QUIT)
+	else if (evt.type == SDL_QUIT && mlx_ptr->event[17].set)
 		mlx_ptr->event[17].callback(mlx_ptr->event[17].param);
 }
 
