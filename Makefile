@@ -1,6 +1,6 @@
 CC = gcc
 
-CFLAGS = -Wall -Wextra -Werror -O2
+CFLAGS = -Wall -Wextra -Werror -O2 -D USE_SDL_IMAGE
 INC = -I.
 
 NAME = libmlx.a

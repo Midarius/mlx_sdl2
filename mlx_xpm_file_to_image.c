@@ -6,10 +6,11 @@
 /*   By: fcals <fcals@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/13 14:33:34 by fcals             #+#    #+#             */
-/*   Updated: 2020/03/14 04:27:59 by fcals            ###   ########.fr       */
+/*   Updated: 2020/04/09 17:08:05 by fcals            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifdef USE_SDL_IMAGE
 #include <SDL_image.h>
 
 void	*mlx_xpm_file_to_image(void *mlx_ptr, char *filename, int *width,
@@ -33,3 +34,14 @@ void	*mlx_xpm_file_to_image(void *mlx_ptr, char *filename, int *width,
 	SDL_LockSurface(image);
 	return ((void*)image);
 }
+#else
+void	*mlx_xpm_file_to_image(void *mlx_ptr, char *filename, int *width,
+	int *height)
+{
+	(void)mlx_ptr;
+	(void)filename;
+	(void)width;
+	(void)height;
+	return ((void*)0);
+}
+#endif
