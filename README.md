@@ -10,17 +10,16 @@ Use a package manager (Brew, Advanced Packaging Tool, ...)
  Download the development libraries at https://www.libsdl.org/projects/SDL_image/
 
 ## Limitations
-Some behaviors of the minilibx has changed with the use of SDL2. Note that these behaviors are considered as bugs and will be fixed
 ### Color format
 Alpha is 0-255 and 0 mean full transparency
 ### Events
 Only 6 events:
-* _00_: Loop
-* _02_: KeyPress
-* _03_: KeyRelease
-* _04_: ButtonPress
-* _05_: ButtonRelease
-* _17_: DestroyNotify
+* `00`: Loop
+* `02`: KeyPress
+* `03`: KeyRelease
+* `04`: ButtonPress
+* `05`: ButtonRelease
+* `17`: DestroyNotify
 ### KeyCodes
 Code send by keypress/keyrelease/buttonpress/buttonrelease are SDL code,
  see:
