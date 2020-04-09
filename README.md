@@ -2,13 +2,11 @@
 minilibx made with SDL2.
 ## Getting Started
 ### Prerequisites
- * SDL2
-Download the development libraries at http://www.libsdl.org/download-2.0.php
-**OR**
-Use a package manager (Brew, Advanced Packaging Tool, ...)
- * SDL_Image
- Download the development libraries at https://www.libsdl.org/projects/SDL_image/
-
+|Library|Description|
+|--|--|
+|**SDL2**|Download the development libraries:<br>http://www.libsdl.org/download-2.0.php  |
+|**SDL2_image**|Download the development libraries:<br>https://www.libsdl.org/projects/SDL_image/|
+|**SDL2_ttf**|Download the development libraries:<br>https://www.libsdl.org/projects/SDL_ttf/|
 ## Limitations
 ### Color format
 Alpha is 0-255 and 0 mean full transparency
