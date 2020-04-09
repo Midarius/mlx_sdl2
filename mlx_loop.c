@@ -6,7 +6,7 @@
 /*   By: fcals <fcals@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/13 15:48:45 by fcals             #+#    #+#             */
-/*   Updated: 2020/03/15 17:01:07 by fcals            ###   ########.fr       */
+/*   Updated: 2020/04/09 15:31:57 by fcals            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,8 +40,9 @@ int			mlx_loop(void *mlx_ptr)
 	while (1)
 	{
 		check_events((t_mlx_ptr*)mlx_ptr);
-		((t_mlx_ptr*)mlx_ptr)->event[0].callback(
-			((t_mlx_ptr*)mlx_ptr)->event[0].param);
+		if (((t_mlx_ptr*)mlx_ptr)->loop.set)
+			((t_mlx_ptr*)mlx_ptr)->loop.callback(
+			((t_mlx_ptr*)mlx_ptr)->loop.param);
 	}
 	return (0);
 }

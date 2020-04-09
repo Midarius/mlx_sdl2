@@ -6,7 +6,7 @@
 /*   By: fcals <fcals@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/13 15:37:54 by fcals             #+#    #+#             */
-/*   Updated: 2020/03/15 16:51:47 by fcals            ###   ########.fr       */
+/*   Updated: 2020/04/09 15:24:09 by fcals            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ typedef struct		s_mlx_evt {
 
 typedef struct		s_mlx_ptr {
 	t_mlx_evt		*event;
+	t_mlx_evt		loop;
 }					t_mlx_ptr;
 
 typedef struct		s_mlx_window {

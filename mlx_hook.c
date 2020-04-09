@@ -6,7 +6,7 @@
 /*   By: fcals <fcals@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/13 18:40:11 by fcals             #+#    #+#             */
-/*   Updated: 2020/03/15 18:19:20 by fcals            ###   ########.fr       */
+/*   Updated: 2020/04/09 15:45:23 by fcals            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,11 @@ static void	add_event(t_mlx_ptr *mlx_ptr, int evt_id, int (*f)(),
 int			mlx_loop_hook(void *mlx_ptr, int (*f)(), void *param)
 {
 	if (mlx_ptr && f)
-		add_event((t_mlx_ptr*)mlx_ptr, 0, f, param);
+	{
+		((t_mlx_ptr*)mlx_ptr)->loop.set = 1;
+		((t_mlx_ptr*)mlx_ptr)->loop.callback = f;
+		((t_mlx_ptr*)mlx_ptr)->loop.param = param;
+	}
 	return (0);
 }
 
@@ -44,6 +48,9 @@ int			mlx_hook(void *win_ptr, int x_event, int x_mask, int (*funct)(),
 	(void)x_mask;
 	if (!(win_ptr) || x_event < 0 || !(funct))
 		return (0);
-	add_event(((t_mlx_window*)win_ptr)->mlx_ptr, x_event, funct, param);
+	if (x_event == 0)
+		mlx_loop_hook(((t_mlx_window*)win_ptr)->mlx_ptr, funct, param);
+	else
+		add_event(((t_mlx_window*)win_ptr)->mlx_ptr, x_event, funct, param);
 	return (0);
 }
