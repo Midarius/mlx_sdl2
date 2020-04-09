@@ -11,9 +11,18 @@ Use a package manager (Brew, Advanced Packaging Tool, ...)
 
 ## Limitations
 Some behaviors of the minilibx has changed with the use of SDL2. Note that these behaviors are considered as bugs and will be fixed
- - Alpha is 0-255 and 0 mean full transparency
- - Only 6 event is handled (keypress, keyrelease, buttonpress, buttonrelease, destroynotify, loop_hook)
- - code send by keypress/keyrelease/buttonpress/buttonrelease are SDL code,
+### Color format
+Alpha is 0-255 and 0 mean full transparency
+### Events
+Only 6 events:
+* _00_: Loop
+* _02_: KeyPress
+* _03_: KeyRelease
+* _04_: ButtonPress
+* _05_: ButtonRelease
+* _17_: DestroyNotify
+### KeyCodes
+Code send by keypress/keyrelease/buttonpress/buttonrelease are SDL code,
  see:
  http://wiki.libsdl.org/SDL_MouseButtonEvent
  http://wiki.libsdl.org/SDLKeycodeLookup
