@@ -6,7 +6,7 @@
 /*   By: fcals <fcals@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/13 15:57:23 by fcals             #+#    #+#             */
-/*   Updated: 2020/03/15 14:27:35 by fcals            ###   ########.fr       */
+/*   Updated: 2020/04/09 15:18:08 by fcals            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,9 @@
 int	mlx_put_image_to_window(void *mlx_ptr, void *win_ptr, void *img_ptr,
 	int x, int y)
 {
-	SDL_Texture *texture;
-	SDL_Rect srcrect;
-	SDL_Rect dstrect;
+	SDL_Texture	*texture;
+	SDL_Rect	srcrect;
+	SDL_Rect	dstrect;
 
 	if (!(mlx_ptr) || !(win_ptr) || !(img_ptr))
 		return (0);
