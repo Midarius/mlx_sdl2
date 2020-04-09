@@ -22,7 +22,6 @@ Theses functions has no effect when called (it will not crash)
 ```c
 unsigned int	mlx_get_color_value(void *mlx_ptr, int color);
 int	mlx_pixel_put(void *mlx_ptr, void *win_ptr, int x, int y, int color);
-int	mlx_string_put(void *mlx_ptr, void *win_ptr, int x, int y, int color, char *string);
 int	mlx_do_key_autorepeatoff(void *mlx_ptr);
 int	mlx_do_key_autorepeaton(void *mlx_ptr);
 int	mlx_do_sync(void *mlx_ptr);

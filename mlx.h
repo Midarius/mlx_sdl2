@@ -6,7 +6,7 @@
 /*   By: fcals <fcals@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/13 15:37:54 by fcals             #+#    #+#             */
-/*   Updated: 2020/03/15 18:35:42 by fcals            ###   ########.fr       */
+/*   Updated: 2020/04/09 16:46:35 by fcals            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,19 +49,17 @@ void			*mlx_xpm_file_to_image(void *mlx_ptr, char *filename,
 	int *width, int *height);
 
 /*
-** Todo: SDL_ttf
-**
-** int	mlx_string_put(void *mlx_ptr, void *win_ptr, int x, int y, int color,
-** char *string);
+** Use SDL_ttf extension
 */
+
+int				mlx_string_put(void *mlx_ptr, void *win_ptr, int x, int y,
+	int color, char *string);
 
 /*
 ** NYI
 */
 
 unsigned int	mlx_get_color_value(void *mlx_ptr, int color);
-int				mlx_string_put(void *mlx_ptr, void *win_ptr, int x, int y,
-	int color, char *string);
 int				mlx_pixel_put(void *mlx_ptr, void *win_ptr, int x, int y,
 	int color);
 int				mlx_do_key_autorepeaton(void *mlx_ptr);
