@@ -6,10 +6,11 @@
 /*   By: fcals <fcals@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/15 12:41:44 by fcals             #+#    #+#             */
-/*   Updated: 2020/04/09 16:45:42 by fcals            ###   ########.fr       */
+/*   Updated: 2020/04/09 16:58:15 by fcals            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifdef USE_SDL_TFF
 #include <SDL_ttf.h>
 
 static void	colortosdl(SDL_Color *sdl, int color)
@@ -40,3 +41,16 @@ int	mlx_string_put(void *mlx_ptr, void *win_ptr, int x, int y, int color,
 	SDL_FreeSurface(image);
 	return (0);
 }
+#else
+int	mlx_string_put(void *mlx_ptr, void *win_ptr, int x, int y, int color,
+	char *string)
+{
+	(void)mlx_ptr;
+	(void)win_ptr;
+	(void)x;
+	(void)y;
+	(void)color;
+	(void)string;
+	return (0);
+}
+#endif
