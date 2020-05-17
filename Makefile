@@ -41,9 +41,9 @@ $(NAME): $(OBJS)
 .PHONY: clean fclean re
 
 clean:
-	rm -rf $(OBJS)
+	$(RM) $(OBJS)
 
 fclean: clean
-	rm -rf $(NAME)
+	$(RM) $(NAME)
 
 re: fclean all
