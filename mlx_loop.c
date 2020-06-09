@@ -6,7 +6,7 @@
 /*   By: fcals <fcals@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/13 15:48:45 by fcals             #+#    #+#             */
-/*   Updated: 2020/04/09 23:14:42 by fcals            ###   ########.fr       */
+/*   Updated: 2020/06/09 13:41:00 by fcals            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 #include <SDL.h>
 #include <mlx_private.h>
 
-static void	vector_window_foreach(t_mlx_ptr *mlx_ptr,  SDL_Event *evt, void (*f)(t_mlx_window *, SDL_Event *))
+static void	vector_window_foreach(t_mlx_ptr *mlx_ptr, SDL_Event *evt,
+	void (*f)(t_mlx_window *, SDL_Event *))
 {
 	unsigned int i;
 
@@ -65,7 +66,7 @@ static void	window_call_close(t_mlx_ptr *mlx_ptr, unsigned int id)
 		{
 			mlx_ptr->windows.data[i]->close.callback(
 				mlx_ptr->windows.data[i]->close.param);
-			break;
+			break ;
 		}
 		i++;
 	}

@@ -6,7 +6,7 @@
 /*   By: fcals <fcals@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/13 12:23:02 by fcals             #+#    #+#             */
-/*   Updated: 2020/04/09 22:52:21 by fcals            ###   ########.fr       */
+/*   Updated: 2020/06/09 13:39:11 by fcals            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 #include <SDL.h>
 #include <mlx_private.h>
 
-static int	vector_window_init(t_vector_window *vector, unsigned int size)
+static int			vector_window_init(t_vector_window *vector,
+	unsigned int size)
 {
 	if (!(vector) || size == 0)
 		return (-1);
@@ -29,6 +30,7 @@ static int	vector_window_init(t_vector_window *vector, unsigned int size)
 static t_mlx_ptr	*mlx_ptr_init(void)
 {
 	t_mlx_ptr *mlx_ptr;
+
 	if (!(mlx_ptr = malloc(sizeof(t_mlx_ptr))))
 		return (NULL);
 	memset(mlx_ptr, 0, sizeof(t_mlx_ptr));
@@ -37,13 +39,13 @@ static t_mlx_ptr	*mlx_ptr_init(void)
 		free(mlx_ptr);
 		return (NULL);
 	}
-	return(mlx_ptr);
+	return (mlx_ptr);
 }
 
-void	mlx_exit(void)
+void				mlx_exit(void)
 {
-	unsigned int i;
-	t_mlx_ptr *mlx_ptr;
+	unsigned int	i;
+	t_mlx_ptr		*mlx_ptr;
 
 	if (!(mlx_ptr = mlx_init()))
 		return ;
@@ -57,7 +59,7 @@ void	mlx_exit(void)
 	free(mlx_ptr);
 }
 
-void	*mlx_init(void)
+void				*mlx_init(void)
 {
 	static t_mlx_ptr *mlx_ptr = NULL;
 
